@@ -1,0 +1,8 @@
+/* 
+   Tailwind is loaded via CDN in index.html for this project setup.
+   This file can be used for custom vanilla CSS if needed.
+*/
+
+html {
+  scroll-behavior: smooth;
+}
