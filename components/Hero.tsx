@@ -34,16 +34,19 @@ export const Hero: React.FC = () => {
             <span className="text-sm font-medium tracking-wide text-gray-200">HR-ПАРТНЕР</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
-            Нахожу людей, <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-              а не «персонал»
-            </span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-tight">
+            Подбираю <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">единомышленников,</span> <br/>
+            которые усилят ваш бизнес
           </h1>
           
-          <h2 className="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed font-light">
-            Специализируюсь на компаниях до 50 человек. Подбираю руководителей, продажников и маркетологов, у которых <span className="text-white font-medium border-b border-marsala/50">Soft Skills</span> важнее диплома.
-          </h2>
+          <div className="space-y-4 max-w-lg text-lg text-gray-300 leading-relaxed font-light">
+            <p>
+              Системный подход, глубокий психологический профайлинг и гарантия результата.
+            </p>
+            <p>
+               <span className="text-white font-medium border-b border-marsala/50">Специализация:</span> Продажи, Маркетинг, Управление.
+            </p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button href={WHATSAPP_LINK} variant="white">
