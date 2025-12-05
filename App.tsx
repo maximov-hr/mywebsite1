@@ -5,9 +5,11 @@ import { Services } from './components/Services';
 import { AstroPromo } from './components/AstroPromo';
 import { TelegramPromo } from './components/TelegramPromo';
 import { Footer } from './components/Footer';
-import { LOGO_URL, LOGO_TEXT, NAV_ITEMS, PHONE_DISPLAY, PHONE_LINK, WHATSAPP_LINK } from './constants';
-import { Menu, X, Settings2, Moon, Sun } from 'lucide-react';
+import { LOGO_TEXT, NAV_ITEMS, PHONE_DISPLAY, PHONE_LINK, WHATSAPP_LINK } from './constants';
+import { Menu, X } from 'lucide-react';
 import { Button } from './components/ui/Button';
+// @ts-ignore
+import logoImage from './Logo.png';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +38,8 @@ function App() {
     }
   };
 
+  const currentLogo = customLogo || logoImage;
+
   // Logic: Invert only if user wants it AND we are on the dark background (not scrolled)
   // If scrolled (white background), we typically want the original dark logo.
   const shouldApplyInvert = invertLogo && !isScrolled;
@@ -60,9 +64,9 @@ function App() {
             <label className="cursor-pointer block relative">
               <input type="file" accept="image/*" className="hidden" onChange={handleLogoUpload} />
               
-              {(customLogo || (!logoError && LOGO_URL)) ? (
+              {(currentLogo && !logoError) ? (
                 <img 
-                  src={customLogo || LOGO_URL} 
+                  src={currentLogo} 
                   onError={() => setLogoError(true)}
                   alt={LOGO_TEXT} 
                   style={{ height: `${logoHeight}px` }}

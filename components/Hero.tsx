@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from './ui/Button';
-import { HERO_IMAGE_URL, HERO_FALLBACK_URL, WHATSAPP_LINK } from '../constants';
+import { HERO_FALLBACK_URL, WHATSAPP_LINK } from '../constants';
 import { ArrowRight, CheckCircle2, Upload, ZoomIn, MoveVertical } from 'lucide-react';
+// @ts-ignore
+import heroImage from '../photo.jpg';
 
 export const Hero: React.FC = () => {
-  const [imgSrc, setImgSrc] = useState(HERO_IMAGE_URL);
+  const [imgSrc, setImgSrc] = useState(heroImage || HERO_FALLBACK_URL);
   
   // Image adjustments
   const [zoom, setZoom] = useState(1);

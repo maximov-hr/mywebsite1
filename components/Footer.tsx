@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Section } from './ui/Section';
 import { Button } from './ui/Button';
-import { FAQS, TELEGRAM_LINK, WHATSAPP_LINK, PHONE_DISPLAY, LOGO_URL, LOGO_TEXT, PHONE_LINK, NAV_ITEMS } from '../constants';
-import { Plus, Minus, Send, Phone, Upload, Settings2 } from 'lucide-react';
+import { FAQS, TELEGRAM_LINK, WHATSAPP_LINK, PHONE_DISPLAY, LOGO_TEXT, PHONE_LINK, NAV_ITEMS } from '../constants';
+import { Plus, Minus, Send, Phone } from 'lucide-react';
+// @ts-ignore
+import logoImage from '../Logo.png';
 
 interface AccordionItemProps {
   question: string;
@@ -49,7 +51,7 @@ export const Footer: React.FC = () => {
     }
   };
 
-  const displayLogo = footerLogo || LOGO_URL;
+  const displayLogo = footerLogo || logoImage;
 
   return (
     <>
@@ -93,7 +95,7 @@ export const Footer: React.FC = () => {
                <label className="cursor-pointer block">
                   <input type="file" accept="image/*" className="hidden" onChange={handleLogoUpload} />
                   
-                  {(footerLogo || !logoError) ? (
+                  {(displayLogo && !logoError) ? (
                       <img 
                         src={displayLogo} 
                         onError={() => setLogoError(true)}
