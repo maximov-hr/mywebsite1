@@ -1,8 +1,12 @@
-/* 
-   Tailwind is loaded via CDN in index.html for this project setup.
-   This file can be used for custom vanilla CSS if needed.
-*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom styles if needed */
+body {
+  @apply bg-platinum text-graphite antialiased;
 }
